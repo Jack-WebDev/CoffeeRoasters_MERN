@@ -1,0 +1,18 @@
+.bar {
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  margin-block-end: 5px;
+}
+
+.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
