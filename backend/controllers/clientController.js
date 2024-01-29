@@ -64,7 +64,10 @@ const loginClient = async (req, res) => {
 };
 
 const logOutClient = async (req, res) => {
-  res.clearCookie("jwtToken");
+  res.cookie("jwt", "", {
+    httpOnly: true,
+    expires: new Date(0),
+  });
   res.status(200).json("Client Logged Out!");
 };
 
