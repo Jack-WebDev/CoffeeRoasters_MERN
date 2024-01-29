@@ -17,7 +17,7 @@ clientRouter.post("/login", loginClient);
 clientRouter.post("/logout", logOutClient);
 
 clientRouter
-  .route("/:id")
+  .route("/profile/:id")
   .get(verifyToken, getClientProfile)
   .put(verifyToken, updateClient)
   .delete(verifyToken, deleteClient);

@@ -36,9 +36,9 @@ const registerClient = async (req, res) => {
 const loginClient = async (req, res) => {
   const { email, password } = req.body;
 
-  // if (!email || password) {
-  //   throw Error("Field cannot be empty!");
-  // }
+  if (!email || !password) {
+    throw Error("Field cannot be empty!");
+  }
 
   try {
     const query = "SELECT * FROM Clients WHERE Email = ?";
@@ -60,7 +60,9 @@ const loginClient = async (req, res) => {
 
     generateToken(res, client.ClientID);
     res.status(200).json({ client });
-  } catch (error) {}
+  } catch (error) {
+    console.error("Error loggin in", error);
+  }
 };
 
 const logOutClient = async (req, res) => {
@@ -90,28 +92,31 @@ const getClientProfile = async (req, res) => {
     const query = "SELECT * FROM Clients WHERE ClientID = ?";
     const value = [id];
 
-    await database.query(query, value);
-    res.status(200).json("Client Profile");
+    const [data] = await database.query(query, value);
+    res.status(200).json({ data });
   } catch (error) {
     console.error("Failed to get client profile");
   }
 };
 
 const updateClient = async (req, res) => {
-  const { id } = req.params;
   const { name, email, password } = req.body;
+  const { id } = req.params;
 
   try {
-    const query =
-      "UPDATE Clients SET Name = ?, SET Email = ?, SET Password = ? WHERE ClientID = ?";
-    const values = [name, email, password, id];
+    const clientID = parseInt(id, 10);
 
-    await database.query(query, values);
-    res.status(201).json("Client Updated!");
+    const query =
+      "UPDATE Clients SET Name = ?, Email = ?, Password = ? WHERE ClientID = ?";
+    const values = [name, email, password, clientID];
+
+    const [data] = await database.query(query, values);
+    res.status(201).json({ data });
   } catch (error) {
     console.error("Failed to update client details!");
   }
 };
+
 const deleteClient = async (req, res) => {
   const { id } = req.params;
 
@@ -119,8 +124,8 @@ const deleteClient = async (req, res) => {
     const query = "DELETE FROM Clients WHERE ClientID = ?";
     const value = [id];
 
-    await database.query(query, value);
-    res.status(200).json("Client Deleted!");
+    const [data] = await database.query(query, value);
+    res.status(200).json({ data });
   } catch (error) {
     console.error("Failed to delete client account.");
   }
