@@ -14,20 +14,20 @@ const registerClient = async (req, res) => {
     throw Error("Field cannot be empty!");
   }
 
-  const userExists = DoesUserExist(email);
+  const userExists = await DoesUserExist(email);
 
   if (userExists) {
     throw Error("This user already exists");
   }
 
   try {
+    const hashedPassword = await hashPassword(password);
     const query = "INSERT INTO Clients (Name, Email, Password) Values(?,?,?)";
-    const hashedPassword = hashPassword(password);
 
     const values = [name, email, hashedPassword];
 
-    await database.query(query, values);
-    res.status(201).json("Client Registered!");
+    const data = await database.query(query, values);
+    res.status(201).json({ data });
   } catch (error) {
     console.error(`Error registering client ${error}`);
   }
@@ -36,9 +36,9 @@ const registerClient = async (req, res) => {
 const loginClient = async (req, res) => {
   const { email, password } = req.body;
 
-  if (!email || password) {
-    throw Error("Field cannot be empty!");
-  }
+  // if (!email || password) {
+  //   throw Error("Field cannot be empty!");
+  // }
 
   try {
     const query = "SELECT * FROM Clients WHERE Email = ?";
@@ -46,6 +46,7 @@ const loginClient = async (req, res) => {
 
     const [rows] = await database.query(query, value);
 
+    console.log(rows);
     if (rows.length === 0) {
       throw Error("Invalid Email! Try again.");
     }
@@ -59,13 +60,25 @@ const loginClient = async (req, res) => {
 
     generateToken();
 
-    res.status(200).json("Client Logged In!");
+    res.status(200).json({ client });
   } catch (error) {}
 };
 
 const logOutClient = async (req, res) => {
   res.clearCookie("jwtToken");
   res.status(200).json("Client Logged Out!");
+};
+
+const getAllClients = async (req, res) => {
+  try {
+    const query = "SELECT * FROM Clients";
+
+    const data = await database.query(query);
+
+    res.status(200).json({ data });
+  } catch (error) {
+    console.error(`Error getting clients ${error}`);
+  }
 };
 
 const getClientProfile = async (req, res) => {
@@ -115,6 +128,7 @@ export {
   registerClient,
   loginClient,
   logOutClient,
+  getAllClients,
   getClientProfile,
   updateClient,
   deleteClient,

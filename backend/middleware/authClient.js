@@ -8,6 +8,7 @@ const DoesUserExist = async (email) => {
 
   try {
     const [rows] = await database.query(query, value);
+    console.log(rows);
     return rows.length > 1;
   } catch (error) {
     console.error(`Error has occurred during login ${error}`);
@@ -41,10 +42,15 @@ const generateToken = async (res, email) => {
     { expiresIn: "1h" }
   );
 
-  res.cookie("jwtToken", token, {
+  res.cookie("jwt", token, {
     httpOnly: true,
-    maxAge: 1 * 60 * 60 * 1000,
   });
+
+  // console.log(token)
+  // res.cookie("jwtToken", token, {
+  //   httpOnly: true,
+  //   maxAge: 1 * 60 * 60 * 1000,
+  // });
 };
 
 export { DoesUserExist, hashPassword, comparePasswords, generateToken };
