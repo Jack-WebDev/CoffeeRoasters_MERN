@@ -1,6 +1,5 @@
 import { database } from "../models/db.js";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 
 const DoesUserExist = async (email) => {
   const query = "SELECT * FROM Clients WHERE Email = ?";
@@ -33,24 +32,6 @@ const comparePasswords = async (password, hashedPassword) => {
   }
 };
 
-const generateToken = async (res, email) => {
-  const token = jwt.sign(
-    {
-      email: email,
-    },
-    process.env.JWT_KEY,
-    { expiresIn: "1h" }
-  );
 
-  res.cookie("jwt", token, {
-    httpOnly: true,
-  });
 
-  // console.log(token)
-  // res.cookie("jwtToken", token, {
-  //   httpOnly: true,
-  //   maxAge: 1 * 60 * 60 * 1000,
-  // });
-};
-
-export { DoesUserExist, hashPassword, comparePasswords, generateToken };
+export { DoesUserExist, hashPassword, comparePasswords};

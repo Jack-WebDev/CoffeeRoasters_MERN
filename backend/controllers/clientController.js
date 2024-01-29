@@ -4,8 +4,8 @@ import {
   DoesUserExist,
   hashPassword,
   comparePasswords,
-  generateToken,
 } from "../middleware/authClient.js";
+import { generateToken } from "../utils/generateToken.js";
 
 const registerClient = async (req, res) => {
   const { name, email, password } = req.body;
@@ -58,8 +58,7 @@ const loginClient = async (req, res) => {
       throw Error("Invalid Password! Try again.");
     }
 
-    generateToken();
-
+    generateToken(res, client.ClientID);
     res.status(200).json({ client });
   } catch (error) {}
 };
