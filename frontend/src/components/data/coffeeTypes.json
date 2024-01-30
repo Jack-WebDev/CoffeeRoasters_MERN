@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Grand Espresso",
+    "img": "kjkh",
+    "description": "Light and flavorful blend with cocoa and black pepper for an intense experience"
+  },
+  {
+    "id": 2,
+    "name": "Planalto",
+    "img": "kjkh",
+    "description": "Brazilian dark roast with rich and velvety body, and hints of fruits and nuts"
+  },
+  {
+    "id": 3,
+    "name": "Piccollo",
+    "img": "kjkh",
+    "description": "Mild and smooth blend featuring notes of toasted almond and dried cherry"
+  },
+  {
+    "id": 4,
+    "name": "Danche",
+    "img": "kjkh",
+    "description": "Ethiopian hand-harvest"
+  }
+  
+]

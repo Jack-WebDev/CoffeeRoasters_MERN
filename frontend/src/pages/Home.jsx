@@ -1,5 +1,7 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import coffeeData from "../components/data/coffeeTypes.json";
+import "../components/CSS/Home.css";
 
 const Home = () => {
   return (
@@ -12,6 +14,43 @@ const Home = () => {
         }
         buttonText={"Create A Plan"}
       />
+      <div>
+        <h2>Our Collection</h2>
+
+        <div className="desktop_render">
+          {coffeeData.map((item) => (
+            <div key={item.id}>
+              <p>{item.img}</p>
+              <p>{item.name}</p>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="tablet_render">
+          {coffeeData.map((item) => (
+            <div className="tablet_card-container" key={item.id}>
+              <p>{item.img}</p>
+              <div>
+                <p>{item.name}</p>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mobile_render">
+          {coffeeData.map((item) => (
+            <div className="mobile_card-container" key={item.id}>
+              <p>{item.img}</p>
+              <div>
+                <p>{item.name}</p>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
