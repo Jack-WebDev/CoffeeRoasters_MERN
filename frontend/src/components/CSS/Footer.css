@@ -1,0 +1,39 @@
+.footer_nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer__menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+}
+
+.footer__menu a {
+  text-decoration: none;
+}
+
+.social_links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+}
+
+@media screen and (max-width: 765px) {
+  .footer_nav {
+    display: grid;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer__menu {
+    display: grid;
+  }
+
+  .social_links {
+    display: grid;
+  }
+}

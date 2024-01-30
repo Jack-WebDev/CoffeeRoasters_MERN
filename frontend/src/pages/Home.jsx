@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import coffeeData from "../components/data/coffeeTypes.json";
 import "../components/CSS/Home.css";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -51,6 +52,8 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      <Footer/>
     </div>
   );
 };
