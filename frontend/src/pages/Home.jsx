@@ -1,8 +1,11 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import coffeeData from "../components/data/coffeeTypes.json";
-import "../components/CSS/Home.css";
+import benefits from "../components/data/benefits.json";
+import howItWorks from "../components/data/howItWorks.json";
 import Footer from "../components/Footer";
+import Card from "../components/Card";
+import "../components/CSS/Home.css";
 
 const Home = () => {
   return (
@@ -15,15 +18,17 @@ const Home = () => {
         }
         buttonText={"Create A Plan"}
       />
-      <div>
+      <section>
         <h2>Our Collection</h2>
 
         <div className="desktop_render">
           {coffeeData.map((item) => (
             <div key={item.id}>
-              <p>{item.img}</p>
-              <p>{item.name}</p>
-              <p>{item.description}</p>
+              <Card
+                img={item.img}
+                name={item.name}
+                description={item.description}
+              />
             </div>
           ))}
         </div>
@@ -43,17 +48,57 @@ const Home = () => {
         <div className="mobile_render">
           {coffeeData.map((item) => (
             <div className="mobile_card-container" key={item.id}>
-              <p>{item.img}</p>
-              <div>
-                <p>{item.name}</p>
-                <p>{item.description}</p>
-              </div>
+              <Card
+                img={item.img}
+                name={item.name}
+                description={item.description}
+              />
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      <Footer/>
+      <section>
+        <div className="typesMain__container">
+          <h2>Why Choose Us?</h2>
+          <p>
+            A large part of our role is choosing which particular coffees will
+            be featured in our range. This means working closely with the best
+            coffee growers to give you a more impactful experience on every
+            level.
+          </p>
+        </div>
+
+        {benefits.map((benefit) => (
+          <div key={benefit.id}>
+            <Card
+              img={benefit.img}
+              name={benefit.name}
+              description={benefit.description}
+            />
+          </div>
+        ))}
+      </section>
+
+      <section>
+        <div className="howItWorksMain__container">
+          <h3>How It Works</h3>
+
+          {howItWorks.map((how) => (
+            <div key={how.id}>
+              <Card
+                img={how.number}
+                name={how.name}
+                description={how.description}
+              />
+            </div>
+          ))}
+
+          <button>Create your plan</button>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
