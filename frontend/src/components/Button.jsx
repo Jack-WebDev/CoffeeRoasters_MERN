@@ -1,7 +1,8 @@
 
-const Button = () => {
+// eslint-disable-next-line react/prop-types
+const Button = ({children}) => {
   return (
-    <button>Create your plan</button>
+    <button>{children}</button>
   )
 }
 
