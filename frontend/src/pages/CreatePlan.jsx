@@ -17,7 +17,7 @@ const CreatePlan = () => {
         <HowItWorks/>
       </div>
 
-      <div>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexDirection:"row-reverse"}}>
       <Faq/>
       <FaqNav/>
       </div>
