@@ -2,9 +2,9 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import coffeeData from "../components/data/coffeeTypes.json";
 import benefits from "../components/data/benefits.json";
-import howItWorks from "../components/data/howItWorks.json";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
+import HowItWorks from "../components/HowItWorks";
 import "../components/CSS/Home.css";
 
 const Home = () => {
@@ -84,17 +84,7 @@ const Home = () => {
         <div className="howItWorksMain__container">
           <h3>How It Works</h3>
 
-          {howItWorks.map((how) => (
-            <div key={how.id}>
-              <Card
-                img={how.number}
-                name={how.name}
-                description={how.description}
-              />
-            </div>
-          ))}
-
-          <button>Create your plan</button>
+          <HowItWorks />
         </div>
       </section>
 

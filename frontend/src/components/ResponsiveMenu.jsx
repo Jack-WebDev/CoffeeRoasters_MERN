@@ -33,6 +33,9 @@ const ResponsiveMenu = () => {
         <li>
           <Link>Profile</Link>
         </li>
+        <li>
+          <Link to={"/createPlan"}>Create Plan</Link>
+        </li>
       </ul>
     </>
   );

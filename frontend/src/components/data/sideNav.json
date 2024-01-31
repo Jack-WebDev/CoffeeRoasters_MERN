@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "number": "01",
+        "name": "Preferences"
+    },
+    {
+        "id":2,
+        "number": "02",
+        "name": "Bean Type"
+    },
+    {
+        "id":3,
+        "number": "03",
+        "name": "Quantity"
+    },
+    {
+        "id":4,
+        "number": "04",
+        "name": "Grind Option"
+    },
+    {
+        "id":5,
+        "number": "05",
+        "name": "Deliveries"
+    }
+]

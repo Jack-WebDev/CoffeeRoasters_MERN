@@ -1,0 +1,93 @@
+{
+    "preference": [
+      {
+        "question": "How do you drink your coffee?",
+        "id": 1,
+        "name": "Capsules",
+        "description": "Compatible with Espresso systems and similar brewers"
+      },
+      {
+        "id": 2,
+        "name": "Filter",
+        "description": "For pour over or drip methods like Aeropress, Chemex, and V60."
+      },
+      {
+        "id":3,
+        "name": "Espresso",
+        "description": "Dense and Finely ground beans for an intense, flavorful experience."
+      }
+    ],
+    "beanType": [
+      {
+        "question": "What type of coffee?",
+        "id": 1,
+        "name": "Single",
+        "description": "Distinct, high quality coffee from a specific family-owned farm."
+      },
+      {
+        "id": 2,
+        "name": "Decaf",
+        "description": "Just like regular coffee, except the caffeine has been removed."
+      },
+      {
+        "id":3,
+        "name": "Blended",
+        "description": "Just like regular coffee, except the caffeine has been removed."
+      }
+    ],
+    "quantity":[
+        {
+          "question": "How much would you like?",
+          "id": 1,
+          "name": "250g",
+          "description": "Perfect for the solo drinker. Yields about 12 delicious cups."
+        },
+        {
+          "id": 2,
+          "name": "500g",
+          "description":"Perfect option for a couple. Yields about 40 delectable cups."
+        },
+        {
+            "id":3,
+            "name": "1000g",
+            "description": "Perfect for offices and events. Yields about 90 delightful cups."
+        }
+    ],
+    "grindOption":[
+        {
+          "question": "Want us to grind them?",
+          "id": 1,
+          "name": "Wholebean",
+          "description": "Best choice if you cherish the full sensory experience."
+        },
+        {
+          "id": 2,
+          "name": "Filter",
+          "description": "For drip or pour-over coffee methods such as V60 or Aeropress."
+        },
+        {
+            "id":3,
+            "name":"Cafetiere",
+            "description": "Course ground beans specially suited for french press coffee"
+        }
+    ],
+    "delivery":[
+        {
+          "question": "How often should we deliver?",
+          "id": 1,
+          "name": "Every Week",
+          "description": "R22.00 per shipment. Includes free first-class shipping."
+        },
+        {
+          "id": 2,
+          "name": "Every 2 Weeks",
+          "description":"R32.00 per shipment. Includes free first-class shipping."
+        },
+        {
+            "id":3,
+            "name": "Every Month",
+            "description": "R42.00 per shipment. Includes free first-class shipping."
+        }
+    ]  
+  }
+  
