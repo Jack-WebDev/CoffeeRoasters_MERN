@@ -10,15 +10,22 @@ import App from "./App.jsx";
 import "./index.css";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
+import CreatePlan from "./pages/CreatePlan.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
 
 // TODO: Install Toastify
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-  <Route path="/" element={<App />}>
-    <Route path="/" index={true} element={<Home/>}/>
-    <Route path="/about" element={<About/>}/>
-  </Route>)
+    <Route path="/" element={<App />}>
+      <Route path="/" index={true} element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/createPlan" element={<CreatePlan />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Route>
+  )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(

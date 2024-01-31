@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "CoffeeRoasters",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "Jack WebDev",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
