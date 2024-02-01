@@ -114,7 +114,7 @@ const updateClient = async (req, res) => {
     const values = [name, email, password, address, clientID];
 
     const [data] = await database.query(query, values);
-    res.status(201).json({ data });
+    return res.status(201).json({ data });
   } catch (error) {
     console.error("Failed to update client details!");
   }

@@ -1,47 +1,63 @@
 import { useState } from "react";
-import Button from "../components/Button"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-    address: ""
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
 
-  const handleChange = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    axios.defaults.withCredentials = true;
+    const response = await axios.post(
+      "http://localhost:8002/api/auth/register",
+      {
+        name,
+        email,
+        password,
+        address,
+      }
+    );
 
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    if (response.status === 201) {
+      navigate("/login");
+    }
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
-        name="name"
+        value={name}
         placeholder="Enter your name"
-        onChange={handleChange}
+        onChange={(e) => setName(e.target.value)}
       />
       <input
         type="email"
-        name="email"
+        value={email}
         placeholder="Enter your email"
-        onChange={handleChange}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <input
         type="password"
-        name="password"
+        value={password}
         placeholder="Enter your password"
-        onChange={handleChange}
+        onChange={(e) => setPassword(e.target.value)}
       />
 
-      <input type="text" name="address" placeholder="Enter your address" onClick={handleChange} required />
+      <input
+        type="text"
+        value={address}
+        placeholder="Enter your address"
+        onChange={(e) => setAddress(e.target.value)}
+        required
+      />
 
-    <Button>Register</Button>
+      <button>Register</button>
     </form>
   );
 };

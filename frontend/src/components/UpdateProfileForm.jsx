@@ -1,50 +1,59 @@
 import { useState } from "react";
 import Button from "../components/Button";
+import axios from "axios";
+
 const UpdateProfileForm = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-    address: "",
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
 
-  const handleChange = (e) => {
+  const handleSubmit = async (e, id) => {
     e.preventDefault();
+    axios.defaults.withCredentials = true;
+    const response = await axios.put(
+      `http://localhost:8002/api/auth/profile/${id}`,
+      {
+        name,
+        email,
+        password,
+        address,
+      }
+    );
 
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    if (response.status === 201) {
+      console.log("updated");
+    }
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
-        name="name"
+        value={name}
         placeholder="Update your name"
-        onClick={handleChange}
+        onChange={(e) => setName(e.target.value)}
         required
       />
       <input
         type="email"
-        name="email"
+        value={email}
         placeholder="Update your email"
-        onClick={handleChange}
+        onChange={(e) => setEmail(e.target.value)}
         required
       />
       <input
         type="password"
-        name="password"
+        value={password}
         placeholder="Update your password"
-        onClick={handleChange}
+        onChange={(e) => setPassword(e.target.value)}
         required
       />
       <input
         type="text"
-        name="address"
+        value={address}
         placeholder="Update your address"
-        onClick={handleChange}
+        onChange={(e) => setAddress(e.target.value)}
         required
       />
 
