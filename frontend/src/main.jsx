@@ -14,6 +14,8 @@ import CreatePlan from "./pages/CreatePlan.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
+import { OrdersContextProvider } from "./context/OrderContext.jsx";
+import { AuthClientContextProvider } from "./context/AuthContext.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +32,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthClientContextProvider>
+      <OrdersContextProvider>
+        <RouterProvider router={router} />
+      </OrdersContextProvider>
+    </AuthClientContextProvider>
   </React.StrictMode>
 );

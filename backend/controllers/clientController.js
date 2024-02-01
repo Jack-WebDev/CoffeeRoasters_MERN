@@ -10,7 +10,7 @@ import { generateToken } from "../utils/generateToken.js";
 const registerClient = async (req, res) => {
   const { name, email, password, address } = req.body;
 
-  if (!name || !email || !password || address) {
+  if (!name || !email || !password || !address) {
     throw Error("Field cannot be empty!");
   }
 
