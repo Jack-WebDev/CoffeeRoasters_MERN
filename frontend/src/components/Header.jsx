@@ -1,14 +1,13 @@
-// TODO: Install react-icons
-
+import {Link} from "react-router-dom"
 import "./CSS/Header.css";
 import ResponsiveMenu from "./ResponsiveMenu";
 
 const Header = () => {
   return (
     <nav className="navBar">
-      <div className="logo">
+      <Link className="logo" to={"/"}>
         <img src="/vite.svg" alt="logo" />
-      </div>
+      </Link>
 
       <ResponsiveMenu />
     </nav>

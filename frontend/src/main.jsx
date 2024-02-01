@@ -13,8 +13,7 @@ import About from "./pages/About.jsx";
 import CreatePlan from "./pages/CreatePlan.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
-
-// TODO: Install Toastify
+import Profile from "./pages/Profile.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +23,7 @@ const router = createBrowserRouter(
       <Route path="/createPlan" element={<CreatePlan />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/profile" element={<Profile />} />
     </Route>
   )
 );

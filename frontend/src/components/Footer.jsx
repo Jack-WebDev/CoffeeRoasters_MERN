@@ -3,9 +3,9 @@ import "./CSS/Footer.css";
 const Footer = () => {
   return (
     <nav className="footer_nav">
-      <div className="logo">
+      <Link className="logo" to={"/"}>
         <img src="/vite.svg" alt="logo" />
-      </div>
+      </Link>
 
       <ul className="footer__menu">
         <li>

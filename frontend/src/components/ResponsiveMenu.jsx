@@ -31,7 +31,7 @@ const ResponsiveMenu = () => {
           <Link to={"/register"}>Register</Link>
         </li>
         <li>
-          <Link>Profile</Link>
+          <Link to={"/profile"}>Profile</Link>
         </li>
         <li>
           <Link to={"/createPlan"}>Create Plan</Link>
