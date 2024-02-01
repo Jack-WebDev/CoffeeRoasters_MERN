@@ -6,6 +6,7 @@ const RegisterForm = () => {
     name: "",
     email: "",
     password: "",
+    address: ""
   });
 
   const handleChange = (e) => {
@@ -37,6 +38,8 @@ const RegisterForm = () => {
         placeholder="Enter your password"
         onChange={handleChange}
       />
+
+      <input type="text" name="address" placeholder="Enter your address" onClick={handleChange} required />
 
     <Button>Register</Button>
     </form>

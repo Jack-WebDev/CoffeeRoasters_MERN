@@ -8,9 +8,9 @@ import {
 import { generateToken } from "../utils/generateToken.js";
 
 const registerClient = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, address } = req.body;
 
-  if (!name || !email || !password) {
+  if (!name || !email || !password || address) {
     throw Error("Field cannot be empty!");
   }
 
@@ -22,9 +22,10 @@ const registerClient = async (req, res) => {
 
   try {
     const hashedPassword = await hashPassword(password);
-    const query = "INSERT INTO Clients (Name, Email, Password) Values(?,?,?)";
+    const query =
+      "INSERT INTO Clients (Name, Email, Password, Address) Values(?,?,?,?)";
 
-    const values = [name, email, hashedPassword];
+    const values = [name, email, hashedPassword, address];
 
     const data = await database.query(query, values);
     res.status(201).json({ data });
@@ -100,15 +101,15 @@ const getClientProfile = async (req, res) => {
 };
 
 const updateClient = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, address } = req.body;
   const { id } = req.params;
 
   try {
     const clientID = parseInt(id, 10);
 
     const query =
-      "UPDATE Clients SET Name = ?, Email = ?, Password = ? WHERE ClientID = ?";
-    const values = [name, email, password, clientID];
+      "UPDATE Clients SET Name = ?, Email = ?, Password = ?, Address = ? WHERE ClientID = ?";
+    const values = [name, email, password, address, clientID];
 
     const [data] = await database.query(query, values);
     res.status(201).json({ data });
