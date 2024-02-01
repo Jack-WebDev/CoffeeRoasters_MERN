@@ -60,7 +60,9 @@ const loginClient = async (req, res) => {
     }
 
     generateToken(res, client.ClientID);
-    res.status(200).json({ client });
+    return res
+      .status(200)
+      .json({ clientID: client.ID, name: client.Name, email: client.Email });
   } catch (error) {
     console.error("Error loggin in", error);
   }

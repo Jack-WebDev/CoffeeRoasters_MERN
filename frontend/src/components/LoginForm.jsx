@@ -1,36 +1,41 @@
 import { useState } from "react";
-import Button from "../components/Button";
-const LoginForm = () => {
-  const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
+// import Button from "../components/Button";
+import { useLogin } from "../hooks/useLogin";
+// import axios from "axios";
 
-  const handleChange = (e) => {
+const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useLogin();
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+
+    login(email, password);
+
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="email"
         name="email"
+        value={email}
         placeholder="Enter your email"
-        onChange={handleChange}
+        onChange={(e) => setEmail(e.target.value)}
         required
       />
       <input
         type="password"
         name="password"
+        value={password}
         placeholder="Enter your password"
-        onChange={handleChange}
+        onChange={(e) => setPassword(e.target.value)}
         required
       />
-      <Button>Login</Button>
+      <button>Login</button>
+      {/* <Button onSubmit={handleSubmit}>Login</Button> */}
     </form>
   );
 };
