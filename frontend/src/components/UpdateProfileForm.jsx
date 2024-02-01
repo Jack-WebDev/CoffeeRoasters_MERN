@@ -8,18 +8,15 @@ const UpdateProfileForm = () => {
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
 
-  const handleSubmit = async (e, id) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     axios.defaults.withCredentials = true;
-    const response = await axios.put(
-      `http://localhost:8002/api/auth/profile/${id}`,
-      {
-        name,
-        email,
-        password,
-        address,
-      }
-    );
+    const response = await axios.put(`/api/auth/profile`, {
+      name,
+      email,
+      password,
+      address,
+    });
 
     if (response.status === 201) {
       console.log("updated");

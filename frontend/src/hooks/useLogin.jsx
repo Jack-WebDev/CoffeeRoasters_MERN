@@ -8,7 +8,7 @@ export const useLogin = () => {
 
   const login = async (email, password) => {
     axios.defaults.withCredentials = true;
-    const response = await axios.post("http://localhost:8002/api/auth/login", {
+    const response = await axios.post("/api/auth/login", {
       email,
       password,
     });

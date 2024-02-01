@@ -5,6 +5,8 @@ import {
   hashPassword,
   comparePasswords,
 } from "../middleware/authClient.js";
+
+import jwt from "jsonwebtoken";
 import { generateToken } from "../utils/generateToken.js";
 
 const registerClient = async (req, res) => {
@@ -104,19 +106,19 @@ const getClientProfile = async (req, res) => {
 
 const updateClient = async (req, res) => {
   const { name, email, password, address } = req.body;
-  const { id } = req.params;
+  const token = req.cookies.jwt;
+
+  const client = jwt.decode(token, process.env.JWT_KEY);
 
   try {
-    const clientID = parseInt(id, 10);
-
     const query =
       "UPDATE Clients SET Name = ?, Email = ?, Password = ?, Address = ? WHERE ClientID = ?";
-    const values = [name, email, password, address, clientID];
+    const values = [name, email, password, address, client.id];
 
     const [data] = await database.query(query, values);
     return res.status(201).json({ data });
   } catch (error) {
-    console.error("Failed to update client details!");
+    console.log("Failed to update client details!", error);
   }
 };
 

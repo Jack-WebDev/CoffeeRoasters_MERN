@@ -13,15 +13,12 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios.defaults.withCredentials = true;
-    const response = await axios.post(
-      "http://localhost:8002/api/auth/register",
-      {
-        name,
-        email,
-        password,
-        address,
-      }
-    );
+    const response = await axios.post("/api/auth/register", {
+      name,
+      email,
+      password,
+      address,
+    });
 
     if (response.status === 201) {
       navigate("/login");
