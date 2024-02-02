@@ -1,0 +1,16 @@
+button {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: var(--clr-cyan-900);
+  font-size: clamp(1rem, 1vw + 0.5rem, 2rem);
+  font-family: var(--ff-france);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
+button:hover {
+  background-color: var(--clr-cyan-100);
+  color: var(--clr-grey-900);
+}

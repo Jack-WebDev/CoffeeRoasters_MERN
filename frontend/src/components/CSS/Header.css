@@ -1,18 +1,99 @@
-.navBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem;
+
+:root {
+  --clr-cyan-900: #0e8784;
+  --clr-cyan-100: #65d2cf;
+  --clr-grey-900: #2c343e;
+  --clr-grey-400: #848990;
+  --clr-orange-100: #fdd6ba;
+  --clr-cream-400: #f4f2eb;
+  --clr-cream-100: #fefcf6;
+  --ff-france: "Fraunces", serif;
+  --ff-barlow: "Barlow", serif;
 }
 
-@media screen and (max-width: 765px) {
-  .navBar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 2rem;
-    padding-block-start: 2rem;
-    height: 20vh;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: min(90%, 1400px);
+  margin-inline: auto;
+}
+header .logo {
+  width: 50%;
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  header .logo {
+    width: auto;
   }
+}
+header .hamburger__menu {
+  position: absolute;
+  right: 5%;
+  cursor: pointer;
+}
+header .hamburger__menu .hamburger {
+  position: absolute;
+}
+header .hamburger__menu .close__menu {
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  header .hamburger__menu {
+    display: none;
+  }
+}
+header nav {
+  padding-block: 2rem;
+}
+header nav .nav__menu {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #fff;
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  top: 0;
+  padding-block: 1rem;
+  transform: translateY(-200%);
+  transition: transform 300ms ease-in-out;
+  box-shadow: 10px 1px 50px 70px #fff;
+}
+@media screen and (min-width: 768px) {
+  header nav .nav__menu {
+    display: flex;
+    width: auto;
+    position: unset;
+    padding: unset;
+    background-color: unset;
+    transform: translateY(5px);
+    box-shadow: none;
+  }
+}
+header nav .nav__item {
+  text-align: center;
+  list-style: none;
+}
+header nav .nav__link {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: var(--ff-barlow);
+  text-decoration: none;
+}
+header nav .nav__link:hover {
+  color: #000;
+  font-weight: 600;
+  text-decoration: 2px solid underline var(--clr-cyan-900);
+}
+header nav .nav__menu.active {
+  transform: translateY(50%);
+}
+header .hamburger__menu .close__menu.active {
+  opacity: 1;
+  z-index: 999;
+}
+header .hamburger__menu > .hamburger.active {
+  opacity: 0;
 }

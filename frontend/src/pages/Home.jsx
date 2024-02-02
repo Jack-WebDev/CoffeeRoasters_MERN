@@ -16,9 +16,9 @@ const Home = () => {
         leadText={
           "Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule."
         }
-        buttonText={"Create A Plan"}
+        buttonText={"Create Your Plan"}
       />
-      <section>
+      <section className="collectionsSection">
         <h2>Our Collection</h2>
 
         <div className="desktop_render">
@@ -36,9 +36,9 @@ const Home = () => {
         <div className="tablet_render">
           {coffeeData.map((item) => (
             <div className="tablet_card-container" key={item.id}>
-              <p>{item.img}</p>
-              <div>
-                <p>{item.name}</p>
+              <img src={item.img} alt={item.name} />
+              <div className="card__content">
+                <h3>{item.name}</h3>
                 <p>{item.description}</p>
               </div>
             </div>

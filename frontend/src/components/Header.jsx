@@ -4,13 +4,13 @@ import ResponsiveMenu from "./ResponsiveMenu";
 
 const Header = () => {
   return (
-    <nav className="navBar">
+    <header>
       <Link className="logo" to={"/"}>
-        <img src="/vite.svg" alt="logo" />
+        <img src="/shared/desktop/logo.svg" alt="logo" />
       </Link>
 
       <ResponsiveMenu />
-    </nav>
+    </header>
   );
 };
 

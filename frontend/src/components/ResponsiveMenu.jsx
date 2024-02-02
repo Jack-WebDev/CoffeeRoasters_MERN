@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import './CSS/ResponsiveMenu.css'
-
+import { FaBars, FaTimes } from "react-icons/fa";
+import "./CSS/ResponsiveMenu.css";
 
 const ResponsiveMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,11 +10,9 @@ const ResponsiveMenu = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <>
+    <nav>
       <div className={`hamburger ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
+        {isOpen ? <FaTimes /> : <FaBars />}
       </div>
 
       <ul className={`nav__menu ${isOpen ? "open" : ""}`}>
@@ -30,14 +28,14 @@ const ResponsiveMenu = () => {
         <li>
           <Link to={"/register"}>Register</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to={"/profile"}>Profile</Link>
         </li>
         <li>
           <Link to={"/createPlan"}>Create Plan</Link>
-        </li>
+        </li> */}
       </ul>
-    </>
+    </nav>
   );
 };
 
