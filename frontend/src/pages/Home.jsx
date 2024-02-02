@@ -58,26 +58,25 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
-        <div className="typesMain__container">
-          <h2>Why Choose Us?</h2>
-          <p>
-            A large part of our role is choosing which particular coffees will
-            be featured in our range. This means working closely with the best
-            coffee growers to give you a more impactful experience on every
-            level.
-          </p>
-        </div>
+      <section className="whyUs">
+        <h2>Why Choose Us?</h2>
+        <p>
+          A large part of our role is choosing which particular coffees will be
+          featured in our range. This means working closely with the best coffee
+          growers to give you a more impactful experience on every level.
+        </p>
 
-        {benefits.map((benefit) => (
-          <div key={benefit.id}>
-            <Card
-              img={benefit.img}
-              name={benefit.name}
-              description={benefit.description}
-            />
-          </div>
-        ))}
+        <div className="cards">
+          {benefits.map((benefit) => (
+            <div className="card_options" key={benefit.id}>
+              <Card
+                img={benefit.img}
+                name={benefit.name}
+                description={benefit.description}
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       <section>
