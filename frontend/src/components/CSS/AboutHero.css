@@ -1,0 +1,40 @@
+.aboutHeroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  color: #fff;
+  background-image: url(/about/mobile/image-hero-whitecup.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-block: 2rem;
+  aspect-ratio: 2.2;
+}
+.aboutHeroSection h1 {
+  font-size: clamp(2rem, 5vw + 0.5rem, 7rem);
+  font-family: var(--ff-france);
+  width: min(90%, 600px);
+  line-height: 1.2;
+}
+.aboutHeroSection p {
+  font-size: clamp(1.2rem, 2vw + 0.5rem, 1.5rem);
+  font-family: var(--ff-barlow);
+  width: min(90%, 600px);
+}
+@media screen and (min-width: 768px) {
+  .aboutHeroSection {
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+    padding-block: unset;
+    padding-inline-start: 2rem;
+    background-image: url(/about/tablet/image-hero-whitecup.jpg);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .aboutHeroSection {
+    background-image: url(/about/desktop/image-hero-whitecup.jpg);
+    aspect-ratio: 3;
+  }
+}

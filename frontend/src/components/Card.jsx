@@ -2,7 +2,7 @@
 
 const Card = ({ img, name, description }) => {
   return (
-    <div className="desktop_card">
+    <div className="desktop_card uk">
       <img src={img} alt={img} />
 
       <div className="card__content">
