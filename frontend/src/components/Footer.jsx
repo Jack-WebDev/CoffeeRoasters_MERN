@@ -3,20 +3,20 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import "./CSS/Footer.css";
 const Footer = () => {
   return (
-    <footer>
+    <footer className="home__footer">
       <Link className="logo" to={"/"}>
         <img src="/shared/desktop/footer-logo.svg" alt="logo" />
       </Link>
 
       <ul className="footer__nav">
         <li>
-          <Link className="nav__link" to={"/"}>Home</Link>
+          <Link className="nav__link" to={"/"}>HOME</Link>
         </li>
         <li>
-          <Link className="nav__link" to={"/about"}>About</Link>
+          <Link className="nav__link" to={"/about"}>ABOUT</Link>
         </li>
         <li>
-          <Link className="nav__link" to={"/createPlan"}>Create Plan</Link>
+          <Link className="nav__link" to={"/createPlan"}>CREATE YOUR PLAN</Link>
         </li>
       </ul>
 

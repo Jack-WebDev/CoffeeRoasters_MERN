@@ -11,79 +11,83 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Hero
-        title={"Great coffee made simple."}
-        leadText={
-          "Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule."
-        }
-        buttonText={"Create Your Plan"}
-      />
-      <section className="collectionsSection">
-        <h2>Our Collection</h2>
+      <hr />
 
-        <div className="desktop_render">
-          {coffeeData.map((item) => (
-            <div key={item.id}>
-              <Card
-                img={item.img}
-                name={item.name}
-                description={item.description}
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="tablet_render">
-          {coffeeData.map((item) => (
-            <div className="tablet_card-container" key={item.id}>
-              <img src={item.img} alt={item.name} />
-              <div className="card__content">
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
+      <main>
+        <Hero
+          title={"Great coffee made simple."}
+          leadText={
+            "Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule."
+          }
+          buttonText={"Create Your Plan"}
+        />
+        <section className="collectionsSection">
+          <h2>Our Collection</h2>
+          <div className="desktop_render">
+            {coffeeData.map((item) => (
+              <div key={item.id}>
+                <Card
+                  img={item.img}
+                  name={item.name}
+                  description={item.description}
+                />
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="mobile_render">
-          {coffeeData.map((item) => (
-            <div className="mobile_card-container" key={item.id}>
-              <Card
-                img={item.img}
-                name={item.name}
-                description={item.description}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
+          <div className="tablet_render">
+            {coffeeData.map((item) => (
+              <div className="tablet_card-container" key={item.id}>
+                <img src={item.img} alt={item.name} />
+                <div className="card__content">
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-      <section className="whyUs">
-        <h2>Why Choose Us?</h2>
-        <p>
-          A large part of our role is choosing which particular coffees will be
-          featured in our range. This means working closely with the best coffee
-          growers to give you a more impactful experience on every level.
-        </p>
+          <div className="mobile_render">
+            {coffeeData.map((item) => (
+              <div className="mobile_card-container" key={item.id}>
+                <Card
+                  img={item.img}
+                  name={item.name}
+                  description={item.description}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <div className="cards">
-          {benefits.map((benefit) => (
-            <div className="card_options" key={benefit.id}>
-              <Card
-                img={benefit.img}
-                name={benefit.name}
-                description={benefit.description}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
+        <section className="whyUs">
+          <h2>Why Choose Us?</h2>
+          <p>
+            A large part of our role is choosing which particular coffees will
+            be featured in our range. This means working closely with the best
+            coffee growers to give you a more impactful experience on every
+            level.
+          </p>
 
-      <section className="howItWorks">
-          <h3>How It Works</h3>
+          <div className="cards">
+            {benefits.map((benefit) => (
+              <div className="card_options" key={benefit.id}>
+                <Card
+                  img={benefit.img}
+                  name={benefit.name}
+                  description={benefit.description}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="howItWorks">
+          <h3 style={{ fontSize: "2.5rem" }}>How It Works</h3>
 
           <HowItWorks />
-      </section>
+        </section>
+      </main>
 
       <Footer />
     </div>

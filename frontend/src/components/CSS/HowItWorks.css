@@ -2,7 +2,7 @@
   display: grid;
   gap: 3rem;
   justify-items: center;
-  transform: translateY(25rem);
+  transform: translateY(28rem);
   padding-inline: 1rem;
   width: min(95%, 1400px);
   margin-inline: auto;
@@ -12,19 +12,7 @@
   gap: 3rem;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
-  .howItWorks .planCreationProcess {
-    grid-template-columns: repeat(3, 1fr);
-    align-items: flex-start;
-    text-align: start;
-  }
-}
-@media screen and (min-width: 768px) {
-  .howItWorks {
-    transform: translateY(0);
-    justify-items: start;
-  }
-}
+
 .howItWorks .process__card {
   display: grid;
   justify-items: center;
@@ -39,7 +27,18 @@
   font-size: clamp(1.5rem, 3vw + 0.5rem, 2rem);
   font-family: var(--ff-france);
 }
+
 @media screen and (min-width: 768px) {
+  .howItWorks {
+    transform: translateY(0);
+    justify-items: start;
+  }
+  .howItWorks .planCreationProcess {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+    text-align: start;
+  }
+
   .howItWorks .process__card {
     justify-items: start;
   }

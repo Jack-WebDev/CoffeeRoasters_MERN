@@ -1,14 +1,13 @@
+main {
+  display: grid;
+  gap: 5rem;
+}
 
-:root {
-  --clr-cyan-900: #0e8784;
-  --clr-cyan-100: #65d2cf;
-  --clr-grey-900: #2c343e;
-  --clr-grey-400: #848990;
-  --clr-orange-100: #fdd6ba;
-  --clr-cream-400: #f4f2eb;
-  --clr-cream-100: #fefcf6;
-  --ff-france: "Fraunces", serif;
-  --ff-barlow: "Barlow", serif;
+hr {
+  width: 100%;
+  box-shadow: 1px -40px 40px 30px #fff;
+  border: 1px solid #fff;
+  transform: translateY(38rem);
 }
 
 .desktop_render {
@@ -44,12 +43,34 @@
   text-align: center;
 }
 
+.collectionsSection h2 {
+  color: #83888f;
+  font-size: clamp(2rem, 5vw + 0.5rem, 10rem);
+  font-family: var(--ff-france);
+  text-transform: capitalize;
+}
+
+.collectionsSection {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.collectionsSection .grandEspresso {
+  box-shadow: 0px -100px 100px 10px #fff;
+}
+
 @media screen and (min-width: 768px) {
   .mobile_render {
     display: none;
   }
   .tablet_render {
     display: grid;
+  }
+
+  hr {
+    transform: translateY(36rem);
   }
 
   .tablet_card-container {
@@ -65,23 +86,29 @@
   }
 
   .card__content {
-    gap: unset;
+    gap: 1rem;
   }
 
   .collectionsSection {
     gap: unset;
   }
-}
-.collectionsSection h2 {
-  color: #83888f;
-  font-size: clamp(2rem, 5vw + 0.5rem, 10rem);
-  font-family: var(--ff-france);
-  text-transform: capitalize;
-}
-@media screen and (min-width: 768px) {
+
   .collectionsSection h2 {
     font-size: clamp(2rem, 14vw + 0.5rem, 6rem);
     text-transform: lowercase;
+  }
+
+  .collectionsSection img {
+    max-width: 40%;
+    transform: translateY(-60px);
+  }
+  .collectionsSection h3 {
+    font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
+    font-family: var(--ff-france);
+  }
+  .collectionsSection p {
+    font-family: var(--ff-barlow);
+    font-weight: 700;
   }
 }
 
@@ -96,81 +123,16 @@
     gap: 1rem;
   }
 
+  hr {
+    transform: translateY(50rem);
+  }
+
   .desktop_card {
     display: flex;
     justify-items: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-}
-.collectionsSection .grandEspresso,
-.collectionsSection .planalto,
-.collectionsSection .piccollo,
-.collectionsSection .danche {
-  display: grid;
-  gap: 1rem;
-  justify-items: center;
-  text-align: center;
-}
-@media screen and (min-width: 768px) {
-  .collectionsSection .grandEspresso,
-  .collectionsSection .planalto,
-  .collectionsSection .piccollo,
-  .collectionsSection .danche {
-    display: flex;
-    align-items: start;
-    text-align: start;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .collectionsSection .grandEspresso,
-  .collectionsSection .planalto,
-  .collectionsSection .piccollo,
-  .collectionsSection .danche {
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    box-shadow: 0px -100px 100px 10px #fff;
-  }
-}
-.collectionsSection .grandEspresso__content,
-.collectionsSection .planalto__content,
-.collectionsSection .piccollo__content,
-.collectionsSection .danche__content {
-  display: grid;
-  align-items: start;
-  gap: 2rem;
-}
-.collectionsSection .grandEspresso__content h3,
-.collectionsSection .planalto__content h3,
-.collectionsSection .piccollo__content h3,
-.collectionsSection .danche__content h3 {
-  font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
-}
-@media screen and (min-width: 768px) {
-  .collectionsSection .grandEspresso__content,
-  .collectionsSection .planalto__content,
-  .collectionsSection .piccollo__content,
-  .collectionsSection .danche__content {
-    transform: translateY(-50px);
-  }
-}
-.collectionsSection .grandEspresso {
-  box-shadow: 0px -100px 100px 10px #fff;
-}
-@media screen and (min-width: 768px) {
-  .collectionsSection img {
-    max-width: 40%;
-    transform: translateY(-60px);
-  }
-  .collectionsSection h3 {
-    font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
-    font-family: var(--ff-france);
-  }
-  .collectionsSection p {
-    font-family: var(--ff-barlow);
-    font-weight: 700;
   }
 }
 
@@ -204,11 +166,6 @@
   justify-items: center;
 }
 
-@media screen and (min-width: 1024px) {
-  .whyUs .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 .whyUs .card_options {
   display: grid;
   gap: 1.5rem;
@@ -217,6 +174,7 @@
   padding: 1.5em;
   border-radius: 10px;
 }
+
 @media screen and (min-width: 768px) {
   .whyUs .card_options {
     display: flex;
@@ -228,12 +186,15 @@
 
   .desktop_card {
     display: flex;
+    align-items: center;
     gap: 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
+  .whyUs .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .whyUs .card_options {
-    flex-direction: column;
     text-align: center;
   }
 }

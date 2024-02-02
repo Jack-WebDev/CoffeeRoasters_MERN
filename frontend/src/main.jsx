@@ -17,7 +17,6 @@ import Profile from "./pages/Profile.jsx";
 import { OrdersContextProvider } from "./context/OrderContext.jsx";
 import { AuthClientContextProvider } from "./context/AuthContext.jsx";
 
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
