@@ -1,0 +1,121 @@
+:root {
+    --clr-cyan-900: #0e8784;
+    --clr-cyan-100: #65d2cf;
+    --clr-grey-900: #2c343e;
+    --clr-grey-400: #848990;
+    --clr-orange-100: #fdd6ba;
+    --clr-cream-400: #f4f2eb;
+    --clr-cream-100: #fefcf6;
+    --ff-france: "Fraunces", serif;
+    --ff-barlow: "Barlow", serif;
+  }
+  
+  .form__container {
+    width: 90vw;
+    margin: auto;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  h1 {
+    padding-block-start: 2rem;
+    font-family: var(--ff-france);
+  }
+  
+  form {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    padding-block-end: 4rem;
+  }
+  
+  form input {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 3rem;
+    padding-inline-start: 1rem;
+    outline: 2px solid var(--clr-cyan-900);
+  }
+  
+  form input::placeholder {
+    font-family: var(--ff-barlow);
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  :root {
+    --clr-cyan-900: #0e8784;
+    --clr-cyan-100: #65d2cf;
+    --clr-grey-900: #2c343e;
+    --clr-grey-400: #848990;
+    --clr-orange-100: #fdd6ba;
+    --clr-cream-400: #f4f2eb;
+    --clr-cream-100: #fefcf6;
+    --ff-france: "Fraunces", serif;
+    --ff-barlow: "Barlow", serif;
+  }
+  
+  footer {
+    padding-block: 2rem;
+    background-color: var(--clr-grey-900);
+    transform: translateY(10rem);
+  }
+  @media screen and (min-width: 768px) {
+    footer {
+      transform: translateY(5rem);
+      padding-block: 3em;
+    }
+  }
+  footer {
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+  }
+  @media screen and (min-width: 1024px) {
+    footer {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  footer .footer__nav {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    list-style: none;
+  }
+  @media screen and (min-width: 768px) {
+    footer .footer__nav {
+      display: flex;
+    }
+  }
+  footer .nav__link {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--ff-barlow);
+    text-decoration: none;
+  }
+  footer .nav__link:hover {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: 2px solid underline var(--clr-cyan-900);
+  }
+  footer .social__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .form__container {
+      width: 50vw;
+    }
+  }
+  
+  @media screen and (min-width: 1100px) {
+    .form__container {
+      width: 30vw;
+    }
+  }
+  
