@@ -1,0 +1,50 @@
+.howItWorks {
+  display: grid;
+  gap: 3rem;
+  justify-items: center;
+  transform: translateY(25rem);
+  padding-inline: 1rem;
+  width: min(95%, 1400px);
+  margin-inline: auto;
+}
+.howItWorks .planCreationProcess {
+  display: grid;
+  gap: 3rem;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .howItWorks .planCreationProcess {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+    text-align: start;
+  }
+}
+@media screen and (min-width: 768px) {
+  .howItWorks {
+    transform: translateY(0);
+    justify-items: start;
+  }
+}
+.howItWorks .process__card {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+.howItWorks .process__card span {
+  font-size: 3rem;
+  font-family: var(--ff-france);
+  color: var(--clr-orange-100);
+}
+.howItWorks .process__card h3 {
+  font-size: clamp(1.5rem, 3vw + 0.5rem, 2rem);
+  font-family: var(--ff-france);
+}
+@media screen and (min-width: 768px) {
+  .howItWorks .process__card {
+    justify-items: start;
+  }
+  .howItWorks .process__card p {
+    font-family: var(--ff-barlow);
+    font-weight: 600;
+  }
+}

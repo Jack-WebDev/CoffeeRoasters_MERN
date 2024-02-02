@@ -16,17 +16,17 @@ const ResponsiveMenu = () => {
       </div>
 
       <ul className={`nav__menu ${isOpen ? "open" : ""}`}>
-        <li>
-          <Link to={"/"}>Home</Link>
+        <li className="nav__item">
+          <Link className="nav__link" to={"/"}>Home</Link>
         </li>
-        <li>
-          <Link to={"/about"}>About Us</Link>
+        <li className="nav__item">
+          <Link className="nav__link" to={"/about"}>About Us</Link>
         </li>
-        <li>
-          <Link to={"/login"}>Login</Link>
+        <li className="nav__item">
+          <Link className="nav__link" to={"/login"}>Login</Link>
         </li>
-        <li>
-          <Link to={"/register"}>Register</Link>
+        <li className="nav__item">
+          <Link className="nav__link" to={"/register"}>Register</Link>
         </li>
         {/* <li>
           <Link to={"/profile"}>Profile</Link>

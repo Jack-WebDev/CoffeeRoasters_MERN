@@ -1,3 +1,16 @@
+
+:root {
+  --clr-cyan-900: #0e8784;
+  --clr-cyan-100: #65d2cf;
+  --clr-grey-900: #2c343e;
+  --clr-grey-400: #848990;
+  --clr-orange-100: #fdd6ba;
+  --clr-cream-400: #f4f2eb;
+  --clr-cream-100: #fefcf6;
+  --ff-france: "Fraunces", serif;
+  --ff-barlow: "Barlow", serif;
+}
+
 .desktop_render {
   display: none;
 }

@@ -79,12 +79,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
-        <div className="howItWorksMain__container">
+      <section className="howItWorks">
           <h3>How It Works</h3>
 
           <HowItWorks />
-        </div>
       </section>
 
       <Footer />
