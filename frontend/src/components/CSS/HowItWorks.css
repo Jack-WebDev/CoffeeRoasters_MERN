@@ -7,6 +7,19 @@
   width: min(95%, 1400px);
   margin-inline: auto;
 }
+
+.howitworksBG {
+  background-color: var(--clr-grey-900);
+  margin-block-start: 5rem;
+  border-radius: 10px;
+  padding: 3rem 2rem;
+  transform: translateY(0);
+}
+
+.howitworksBG h3, .howitworksBG p {
+  color: #fff;
+}
+
 .howItWorks .planCreationProcess {
   display: grid;
   gap: 3rem;

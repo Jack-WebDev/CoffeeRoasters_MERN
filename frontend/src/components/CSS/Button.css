@@ -3,6 +3,7 @@ button {
   border: none;
   border-radius: 5px;
   color: #fff;
+  width: fit-content;
   background-color: var(--clr-cyan-900);
   font-size: clamp(1rem, 1vw + 0.5rem, 2rem);
   font-family: var(--ff-france);

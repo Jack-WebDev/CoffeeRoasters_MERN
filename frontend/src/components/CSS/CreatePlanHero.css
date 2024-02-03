@@ -1,0 +1,48 @@
+.createPlanHeroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  color: #fff;
+  background-image: url(/plan/mobile/image-hero-blackcup.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-block: 2rem;
+  margin-inline: auto;
+  border-radius: 10px;
+  aspect-ratio: 2.2;
+  width: min(95%, 1400px);
+}
+.createPlanHeroSection h1 {
+  font-size: clamp(2rem, 5vw + 0.5rem, 5rem);
+  font-family: var(--ff-france);
+  width: min(90%, 600px);
+  line-height: 1.2;
+}
+.createPlanHeroSection p {
+  font-size: clamp(1.2rem, 2vw + 0.5rem, 1.5rem);
+  font-family: var(--ff-barlow);
+  width: min(90%, 600px);
+}
+
+@media screen and (min-width: 768px) {
+  .createPlanHeroSection {
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+    background-image: url(/plan/tablet/image-hero-blackcup.jpg);
+    padding-inline-start: 2rem;
+    padding-block: unset;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .createPlanHeroSection {
+    background-image: url(/plan/desktop/image-hero-blackcup.jpg);
+    aspect-ratio: 3;
+  }
+
+  .createPlanHeroSection h1 {
+    padding: unset;
+  }
+}

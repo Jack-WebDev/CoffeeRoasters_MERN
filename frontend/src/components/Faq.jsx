@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import orderOptions from "../components/data/orderOptions.json";
 import OrderOptionCard from "./OrderOptionCard";
 import Button from "./Button";
-
-// ... (previous code)
+import "../components/CSS/FAQ.css";
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -35,32 +35,40 @@ const Faq = () => {
             onClick={() => handleToggle(categoryIndex)}
           >
             {orderOptions[category][0].question}
-            <span>{openIndex === categoryIndex ? "▲" : "▼"}</span>
+            <span>
+              {openIndex === categoryIndex ? (
+                <FaChevronUp color="#0e8784" />
+              ) : (
+                <FaChevronDown color="#0e8784" />
+              )}
+            </span>
           </h2>
 
-          {openIndex === categoryIndex &&
-            orderOptions[category].map((option) => (
-              <div className="faq_div" key={option.name}>
-                <OrderOptionCard
-                  name={option.name}
-                  details={option.description}
-                  onSelect={() => handleOptionSelect(category, option)}
-                />
-              </div>
-            ))}
+          <div className="faq__content">
+            {openIndex === categoryIndex &&
+              orderOptions[category].map((option) => (
+                <div className="faq_div" key={option.name}>
+                  <OrderOptionCard
+                    name={option.name}
+                    details={option.description}
+                    onSelect={() => handleOptionSelect(category, option)}
+                  />
+                </div>
+              ))}
+          </div>
         </div>
       ))}
 
-      {/* Display order summary */}
-      <div style={{ marginTop: "1rem" }}>
+      <div className="order_summary">
         <h3>Order Summary</h3>
         <p>
-          I drink my coffee as {orderSummary.preference}, with a{" "}
-          {orderSummary.beanType} ground ala {orderSummary.grindOption} type
-          bean. {orderSummary.quantity} sent to me {orderSummary.delivery}.
+          I drink my coffee as <span>{orderSummary.preference}</span>, with a{" "}
+          <span>{orderSummary.beanType}</span> ground ala{" "}
+          <span>{orderSummary.grindOption}</span> type bean.{" "}
+          <span>{orderSummary.quantity}</span> sent to me{" "}
+          <span>{orderSummary.delivery}</span>.
         </p>
       </div>
-
       <Button>Create plan!</Button>
     </div>
   );
