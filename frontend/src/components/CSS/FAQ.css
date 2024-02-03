@@ -48,8 +48,8 @@
 }
 
 .order_summary h3 {
-    justify-self: start;
-    color: var(--clr-grey-400);
+  justify-self: start;
+  color: var(--clr-grey-400);
 }
 
 .order_summary span {
@@ -58,8 +58,23 @@
   color: var(--clr-cyan-900);
 }
 
-.btn {
-  justify-self: center;
+.createPlan__btn {
+  justify-self: end;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  width: fit-content;
+  background-color: var(--clr-cyan-900);
+  font-size: clamp(1rem, 1vw + 0.5rem, 2rem);
+  font-family: var(--ff-france);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
+.createPlan__btn:hover {
+  background-color: var(--clr-cyan-100);
+  color: var(--clr-grey-900);
 }
 
 @media screen and (min-width: 768px) {

@@ -1,4 +1,4 @@
-// TODO: Install Validator
+import validator from "validator";
 import { database } from "../models/db.js";
 import {
   DoesUserExist,
@@ -14,6 +14,14 @@ const registerClient = async (req, res) => {
 
   if (!name || !email || !password || !address) {
     throw Error("Field cannot be empty!");
+  }
+
+  if (!validator.isEmail(email)) {
+    throw Error("Not a valid email");
+  }
+
+  if (!validator.isStrongPassword(password)) {
+    throw Error("Not strong enough");
   }
 
   const userExists = await DoesUserExist(email);

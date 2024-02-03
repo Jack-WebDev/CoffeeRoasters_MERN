@@ -1,14 +1,33 @@
 import { useState } from "react";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { FaChevronUp, FaChevronDown, FaCheckCircle } from "react-icons/fa";
 import orderOptions from "../components/data/orderOptions.json";
 import OrderOptionCard from "./OrderOptionCard";
-import Button from "./Button";
 import "../components/CSS/FAQ.css";
+import SummaryModal from "./SummaryModal";
 
 // eslint-disable-next-line react/prop-types
 const Faq = ({ name }) => {
   const [openIndex, setOpenIndex] = useState(null);
   const [orderSummary, setOrderSummary] = useState({});
+  const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
+  // const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
+
+  const openFirstModal = () => {
+    setIsFirstModalOpen(true);
+  };
+
+  const closeFirstModal = () => {
+    setIsFirstModalOpen(false);
+  };
+
+  // const openSecondModal = () => {
+  //   setIsFirstModalOpen(false);
+  //   setIsSecondModalOpen(true);
+  // };
+
+  // const closeSecondModal = () => {
+  //   setIsSecondModalOpen(false);
+  // };
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -70,7 +89,20 @@ const Faq = ({ name }) => {
           <span>{orderSummary.delivery}</span>.
         </p>
       </div>
-      <Button>Create plan!</Button>
+      <button className="createPlan__btn" onClick={openFirstModal}>
+        Create plan!
+      </button>
+
+      <div>
+        <SummaryModal openModal={isFirstModalOpen} closeModal={closeFirstModal}>
+          <FaCheckCircle />
+
+          <h3>
+            Thanks for your support {name}, we have received your order and
+            shipment will begin according to your specs. Enjoy!{" "}
+          </h3>
+        </SummaryModal>
+      </div>
     </div>
   );
 };

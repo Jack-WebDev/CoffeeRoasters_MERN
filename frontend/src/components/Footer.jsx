@@ -15,9 +15,6 @@ const Footer = () => {
         <li>
           <Link className="nav__link" to={"/about"}>ABOUT</Link>
         </li>
-        <li>
-          <Link className="nav__link" to={"/createPlan"}>CREATE YOUR PLAN</Link>
-        </li>
       </ul>
 
       <div className="social__links">

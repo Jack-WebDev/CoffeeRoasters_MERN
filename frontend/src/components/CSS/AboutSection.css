@@ -30,6 +30,7 @@
 @media screen and (min-width: 768px) {
   .ourCommitment {
     display: flex;
+    margin-inline: 1.5rem;
   }
   .ourCommitment .mobile-img {
     display: none;

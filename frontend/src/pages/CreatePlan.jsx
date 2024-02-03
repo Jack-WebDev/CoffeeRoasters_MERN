@@ -43,11 +43,6 @@ const CreatePlan = () => {
               About
             </Link>
           </li>
-          <li>
-            <Link className="nav__link" to={"/createPlan"}>
-              Create Plan
-            </Link>
-          </li>
         </ul>
 
         <div className="social__links">
