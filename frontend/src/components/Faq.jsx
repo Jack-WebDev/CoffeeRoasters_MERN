@@ -5,7 +5,8 @@ import OrderOptionCard from "./OrderOptionCard";
 import Button from "./Button";
 import "../components/CSS/FAQ.css";
 
-const Faq = () => {
+// eslint-disable-next-line react/prop-types
+const Faq = ({ name }) => {
   const [openIndex, setOpenIndex] = useState(null);
   const [orderSummary, setOrderSummary] = useState({});
 
@@ -60,7 +61,7 @@ const Faq = () => {
       ))}
 
       <div className="order_summary">
-        <h3>Order Summary</h3>
+        <h3>Order Summary for {name} </h3>
         <p>
           I drink my coffee as <span>{orderSummary.preference}</span>, with a{" "}
           <span>{orderSummary.beanType}</span> ground ala{" "}

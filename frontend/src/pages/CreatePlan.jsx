@@ -6,13 +6,15 @@ import HowItWorks from "../components/HowItWorks";
 import FaqNav from "../components/FaqNav";
 import Faq from "../components/Faq";
 import "../components/CSS/CreatePlan.css";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const CreatePlan = () => {
+  const { client } = useAuthContext();
   return (
     <div>
       <Header />
       <CreatePlanHero
-        title={"Create a plan"}
+        title={`Create a Plan, ${client}`}
         leadText={
           "Build a subscription plan that best fits your needs. We offer an assortment of the best artisan coffees from around the globe delivered fresh to your door."
         }
@@ -23,7 +25,7 @@ const CreatePlan = () => {
       </section>
       <div className="faqSection">
         <FaqNav />
-        <Faq />
+        <Faq name={client} />
       </div>
       <footer>
         <Link className="logo" to={"/"}>
